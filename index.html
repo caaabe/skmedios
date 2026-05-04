@@ -998,6 +998,95 @@
     }
 
     /* =====================================================
+       COMING SOON / PROYECTOS
+       ===================================================== */
+    .coming-soon-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .cs-card {
+      background: var(--bg-dark);
+      border-radius: var(--r-lg);
+      padding: 48px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cs-icon {
+      width: 72px; height: 72px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cs-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .cs-desc {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+      max-width: 320px;
+    }
+
+    .cs-btn { margin-top: 4px; }
+
+    .cs-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cs-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .cs-feature:first-child { border-top: 1px solid var(--border); }
+
+    .cs-feat-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 24px;
+    }
+
+    .cs-feat-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: 4px;
+    }
+
+    .cs-feat-desc {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 1024px) {
+      .coming-soon-wrap { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+    }
+
+    /* =====================================================
        MODAL CONTACT
        ===================================================== */
     .modal-overlay {
@@ -1207,7 +1296,7 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Quiero mi web
             </a>
-            <a href="#proyectos" class="btn btn-ghost btn-lg">Ver proyectos</a>
+            <a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Ver LinkedIn</a>
           </div>
 
           <div class="hero-proof fade-up delay-4">
@@ -1447,126 +1536,52 @@
   <!-- =========================================================
        PROYECTOS / SHOWCASE
        ========================================================= -->
-  <section id="proyectos" aria-label="Proyectos recientes">
+  <section id="proyectos" aria-label="Próximos proyectos">
     <div class="container">
       <div class="section-header fade-up">
         <span class="label">Proyectos</span>
-        <h2 class="title-lg">Trabajo que habla por sí solo.</h2>
-        <p class="subtitle">Cada proyecto tiene una historia. Aquí van algunos de los negocios que ya tienen su web trabajando para ellos.</p>
+        <h2 class="title-lg">El primero podría<br>ser el tuyo.</h2>
+        <p class="subtitle">Estamos comenzando y tenemos cupos disponibles para los primeros clientes. Si tu negocio necesita presencia online, este es el momento.</p>
       </div>
 
-      <div class="projects-grid">
+      <div class="coming-soon-wrap fade-up delay-1">
+        <div class="cs-card">
+          <div class="cs-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="cs-title">Portafolio en construcción</h3>
+          <p class="cs-desc">Los mejores proyectos están por llegar. Mientras tanto, podés conocerme en LinkedIn y ver mi experiencia como desarrollador.</p>
+          <a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener" class="btn btn-primary cs-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            Ver mi LinkedIn
+          </a>
+        </div>
 
-        <!-- Project 1 -->
-        <div class="proj-card fade-up delay-1">
-          <div class="proj-visual">
-            <div class="proj-screen">
-              <div class="proj-mini-bar">
-                <div class="pmb-dot"></div><div class="pmb-dot"></div><div class="pmb-dot"></div>
-              </div>
-              <div class="proj-mini-body">
-                <div class="pm-bar" style="width:80%"></div>
-                <div class="pm-bar" style="width:55%"></div>
-                <div class="pm-bar" style="width:70%"></div>
-                <div class="pm-bar" style="width:40%"></div>
-              </div>
+        <div class="cs-features">
+          <div class="cs-feature fade-up delay-2">
+            <div class="cs-feat-num">01</div>
+            <div>
+              <p class="cs-feat-title">Precios de lanzamiento</p>
+              <p class="cs-feat-desc">Los primeros clientes acceden a precios especiales antes de que llenemos el calendario.</p>
             </div>
           </div>
-          <div class="proj-info">
-            <p class="proj-tag">E-commerce</p>
-            <h3 class="proj-name">TiendaMar Online</h3>
-            <p class="proj-desc">Tienda de productos artesanales con carrito, pagos integrados y panel de gestión. Carga en 0.7s. Ventas x2 en 60 días.</p>
-            <div class="proj-chips">
-              <span class="proj-chip">Go</span>
-              <span class="proj-chip">HTML/CSS</span>
-              <span class="proj-chip">Stripe</span>
-              <span class="proj-chip">PostgreSQL</span>
+          <div class="cs-feature fade-up delay-3">
+            <div class="cs-feat-num">02</div>
+            <div>
+              <p class="cs-feat-title">Atención personalizada</p>
+              <p class="cs-feat-desc">Sin cola de espera. Tu proyecto recibe dedicación completa desde el primer día.</p>
+            </div>
+          </div>
+          <div class="cs-feature fade-up delay-4">
+            <div class="cs-feat-num">03</div>
+            <div>
+              <p class="cs-feat-title">Tu web como referencia</p>
+              <p class="cs-feat-desc">Los primeros proyectos son los que más cuido — serán mi carta de presentación al mundo.</p>
             </div>
           </div>
         </div>
-
-        <!-- Project 2 -->
-        <div class="proj-card fade-up delay-2">
-          <div class="proj-visual">
-            <div class="proj-screen">
-              <div class="proj-mini-bar">
-                <div class="pmb-dot"></div><div class="pmb-dot"></div><div class="pmb-dot"></div>
-              </div>
-              <div class="proj-mini-body">
-                <div class="pm-bar" style="width:90%"></div>
-                <div class="pm-bar" style="width:60%"></div>
-                <div class="pm-bar" style="width:75%"></div>
-                <div class="pm-bar" style="width:50%"></div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-info">
-            <p class="proj-tag">Landing Page</p>
-            <h3 class="proj-name">FitStudio — Gimnasio</h3>
-            <p class="proj-desc">Landing page de conversión para captación de membresías. Formulario conectado a CRM. Tasa de conversión del 11.4%.</p>
-            <div class="proj-chips">
-              <span class="proj-chip">Go</span>
-              <span class="proj-chip">CSS Grid</span>
-              <span class="proj-chip">Mailchimp API</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="proj-card fade-up delay-1">
-          <div class="proj-visual">
-            <div class="proj-screen">
-              <div class="proj-mini-bar">
-                <div class="pmb-dot"></div><div class="pmb-dot"></div><div class="pmb-dot"></div>
-              </div>
-              <div class="proj-mini-body">
-                <div class="pm-bar" style="width:70%"></div>
-                <div class="pm-bar" style="width:85%"></div>
-                <div class="pm-bar" style="width:50%"></div>
-                <div class="pm-bar" style="width:65%"></div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-info">
-            <p class="proj-tag">Sitio corporativo</p>
-            <h3 class="proj-name">AbogadosPro</h3>
-            <p class="proj-desc">Web institucional para despacho legal con blog integrado, agenda de consultas y área de clientes protegida con login.</p>
-            <div class="proj-chips">
-              <span class="proj-chip">Go</span>
-              <span class="proj-chip">SQLite</span>
-              <span class="proj-chip">Auth JWT</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="proj-card fade-up delay-2">
-          <div class="proj-visual">
-            <div class="proj-screen">
-              <div class="proj-mini-bar">
-                <div class="pmb-dot"></div><div class="pmb-dot"></div><div class="pmb-dot"></div>
-              </div>
-              <div class="proj-mini-body">
-                <div class="pm-bar" style="width:75%"></div>
-                <div class="pm-bar" style="width:45%"></div>
-                <div class="pm-bar" style="width:80%"></div>
-                <div class="pm-bar" style="width:55%"></div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-info">
-            <p class="proj-tag">Reservas online</p>
-            <h3 class="proj-name">ClínicaVerde</h3>
-            <p class="proj-desc">Sistema de citas online para clínica médica. Recordatorios por email automáticos y panel de administración para el equipo.</p>
-            <div class="proj-chips">
-              <span class="proj-chip">Go</span>
-              <span class="proj-chip">PostgreSQL</span>
-              <span class="proj-chip">Email API</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+
     </div>
   </section>
 
@@ -1940,7 +1955,7 @@
           <ul class="footer-links">
             <li><a href="mailto:hola@skmedios.com">hola@skmedios.com</a></li>
             <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a href="https://linkedin.com/company/skmedios" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://github.com/skmedios" target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </div>
@@ -1953,7 +1968,7 @@
           <a href="https://github.com/skmedios" target="_blank" rel="noopener" class="f-social-btn" aria-label="GitHub">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
-          <a href="https://linkedin.com/company/skmedios" target="_blank" rel="noopener" class="f-social-btn" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener" class="f-social-btn" aria-label="LinkedIn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
           <a href="https://twitter.com/skmedios" target="_blank" rel="noopener" class="f-social-btn" aria-label="Twitter / X">
