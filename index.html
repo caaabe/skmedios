@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Páginas web modernas, ultrarrápidas y optimizadas para convertir visitantes en clientes. Desarrollo profesional con Go.">
-  <title>SKMedios — Desarrollo Web Profesional</title>
+  <title>skmedios — Desarrollo Web Profesional</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1225,7 +1225,14 @@
       .nav-end .btn { display: none; }
 
       .float-card { display: none; }
-      .browser { transform: none; }
+      .hero-right { max-width: 100%; }
+      .browser {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        transform: none;
+      }
+      .browser-screen { min-height: 320px; }
 
       .benefits-grid { grid-template-columns: 1fr; }
       .b-card.dark { grid-column: 1; }
@@ -1384,25 +1391,6 @@
       </div>
     </div>
   </section>
-
-  <!-- =========================================================
-       TRUST BAR
-       ========================================================= -->
-  <div class="trust-bar" aria-label="Clientes anteriores">
-    <div class="container">
-      <div class="trust-inner">
-        <span class="trust-sep">Trabajé con</span>
-        <div class="trust-logos">
-          <span class="trust-logo">RestauranteNova</span>
-          <span class="trust-logo">ClínicaVerde</span>
-          <span class="trust-logo">FitStudio</span>
-          <span class="trust-logo">AbogadosPro</span>
-          <span class="trust-logo">TiendaMar</span>
-          <span class="trust-logo">AgenciaX</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- =========================================================
        BENEFICIOS
@@ -1778,7 +1766,7 @@
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
           <p class="test-text">
-            Teníamos una tienda que tardaba 6 segundos en cargar y perdíamos ventas en el checkout. SKMedios rehízo todo desde cero. Ahora carga en menos de 1 segundo y nuestras ventas crecieron un 34% el primer mes.
+            Teníamos una tienda que tardaba 6 segundos en cargar y perdíamos ventas en el checkout. skmedios rehízo todo desde cero. Ahora carga en menos de 1 segundo y nuestras ventas crecieron un 34% el primer mes.
           </p>
           <div class="test-author">
             <div class="test-av ta-1" aria-hidden="true">SM</div>
@@ -1812,7 +1800,7 @@
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
           <p class="test-text">
-            Lo que más valoré es que SKMedios piensa como negocio, no solo como desarrolladores. Hicieron preguntas que yo no había considerado. El resultado fue una web que realmente trabaja por mí mientras duermo.
+            Lo que más valoré es que skmedios piensa como negocio, no solo como desarrolladores. Hicieron preguntas que yo no había considerado. El resultado fue una web que realmente trabaja por mí mientras duermo.
           </p>
           <div class="test-author">
             <div class="test-av ta-3" aria-hidden="true">MD</div>
@@ -1848,7 +1836,7 @@
         <!-- Content -->
         <div class="about-content fade-up delay-2">
           <span class="label">Sobre mí</span>
-          <h2 class="title-lg">Hola, somos SKMedios.<br>Hacemos webs que trabajan.</h2>
+          <h2 class="title-lg">Hola, somos skmedios.<br>Hacemos webs que trabajan.</h2>
 
           <p class="about-text">
             Soy desarrollador backend especializado en Go, con experiencia construyendo sistemas que manejan miles de peticiones por segundo sin sudar. Pero no me quedé solo en el servidor: llevo años combinando ese poder técnico con diseño frontend que convierte.
@@ -1954,7 +1942,7 @@
           <p class="footer-col-title">Contacto</p>
           <ul class="footer-links">
             <li><a href="mailto:hola@skmedios.com">hola@skmedios.com</a></li>
-            <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://wa.me/59899786055" target="_blank" rel="noopener">WhatsApp</a></li>
             <li><a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://github.com/skmedios" target="_blank" rel="noopener">GitHub</a></li>
           </ul>
@@ -1963,7 +1951,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 SKMedios · Hecho con Go y mucho café · Todos los derechos reservados</p>
+        <p class="footer-copy">© 2026 skmedios · Hecho con Go y mucho café · Todos los derechos reservados</p>
         <div class="footer-social" aria-label="Redes sociales">
           <a href="https://github.com/skmedios" target="_blank" rel="noopener" class="f-social-btn" aria-label="GitHub">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
