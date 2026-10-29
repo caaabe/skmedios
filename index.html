@@ -513,6 +513,9 @@
 
     .b-stats {
       display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      text-align: center;
       gap: 40px;
       margin-top: 28px;
       padding-top: 24px;
@@ -764,7 +767,6 @@
     /* =====================================================
        TESTIMONIOS
        ===================================================== */
-    #testimonios { background: var(--bg); }
 
     .test-grid {
       display: grid;
@@ -846,12 +848,10 @@
       overflow: hidden;
       box-shadow: var(--sh-lg);
     }
-    .photo-init {
-      font-size: 6rem;
-      font-weight: 900;
-      color: rgba(255,255,255,0.07);
-      letter-spacing: -0.06em;
-      user-select: none;
+    .photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .about-badge {
@@ -1245,6 +1245,27 @@
       .modal { padding: 28px 22px; }
       .form-grid { grid-template-columns: 1fr; }
     }
+
+    #hero { padding-top: 116px; padding-bottom: 64px; }
+    .hero-title { font-size: clamp(2.3rem, 4vw, 3.2rem); line-height: 1.08; }
+    .hero-badge { align-self: flex-start; }
+    .p-cur { font-size: .9rem; }
+    .p-period { color: var(--text-2); }
+    .p-card.featured .p-period { color: rgba(255,255,255,.8); }
+    .modal { max-height: calc(100dvh - 48px); overflow-y: auto; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    section { scroll-margin-top: 64px; }
+    .faq-list { max-width: 760px; margin: auto; }
+    .faq-list details { border-bottom: 1px solid var(--border-md); padding: 22px 0; }
+    .faq-list summary { font-weight: 700; cursor: pointer; }
+    .faq-list p { margin-top: 12px; color: var(--text-2); }
+    .pricing-note { text-align: center; color: var(--text-2); max-width: 720px; margin: 32px auto 0; font-size: .875rem; }
+    @media(max-width: 1024px) { .hero-badge { align-self: center; } }
+    @media(prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .fade-up { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 
@@ -1289,31 +1310,25 @@
           </div>
 
           <h1 class="hero-title fade-up delay-1">
-            Tu negocio merece<br>
-            una web que <span class="grad">realmente vende.</span>
+            Una web profesional.<br>
+            <span class="grad">Más consultas para tu negocio.</span>
           </h1>
 
           <p class="hero-sub fade-up delay-2">
-            Páginas modernas, ultrarrápidas y diseñadas para convertir. Construidas con tecnología de nivel enterprise para que tu negocio crezca sin límites.
+            Diseño y desarrollo sitios para negocios y profesionales. Adaptados a celulares, fáciles de recorrer y con contacto directo por WhatsApp.
           </p>
 
           <div class="hero-actions fade-up delay-3">
             <a href="#" class="btn btn-primary btn-lg" data-modal-trigger>
               <!-- Arrow icon -->
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Quiero mi web
+              Contame tu proyecto
             </a>
-            <a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Ver LinkedIn</a>
+            <a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Conocé mi experiencia</a>
           </div>
 
           <div class="hero-proof fade-up delay-4">
-            <div class="avatars" aria-hidden="true">
-              <div class="av">SM</div>
-              <div class="av">CR</div>
-              <div class="av">MD</div>
-              <div class="av">LP</div>
-            </div>
-            <p class="proof-text"><strong>+20 negocios</strong> ya tienen su web. Únete.</p>
+            <p class="proof-text"><strong>Trato directo conmigo.</strong> Desde la primera charla hasta la entrega.</p>
           </div>
         </div>
 
@@ -1325,8 +1340,8 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="fc-data">
-              <strong>0.8s</strong>
-              <span>Tiempo de carga</span>
+              <strong>Mobile first</strong>
+              <span>Pensada para celulares</span>
             </div>
           </div>
 
@@ -1338,7 +1353,7 @@
                 <div class="b-dot"></div>
                 <div class="b-dot"></div>
               </div>
-              <div class="b-url">tunegocio.com</div>
+              <div class="b-url">tunegocio.com · Demo ilustrativa</div>
             </div>
             <div class="browser-screen" aria-hidden="true">
               <!-- Fake website -->
@@ -1382,8 +1397,8 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="fc-data">
-              <strong>+34%</strong>
-              <span>Conversiones promedio</span>
+              <strong>Contacto directo</strong>
+              <span>WhatsApp integrado</span>
             </div>
           </div>
         </div>
@@ -1411,7 +1426,7 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3 class="b-title">Velocidad que convierte</h3>
-          <p class="b-desc">Cada 100ms de retraso cuesta ventas. Tus páginas cargan en menos de 1 segundo. Google te premia, tus clientes se quedan.</p>
+          <p class="b-desc">Optimizo imágenes, recursos y código para que navegar sea ágil desde el primer momento.</p>
         </div>
 
         <!-- Card 2 -->
@@ -1438,7 +1453,7 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <h3 class="b-title">Responsive de verdad</h3>
-          <p class="b-desc">El 65% del tráfico web es móvil. Tus clientes te verán perfectamente desde cualquier pantalla, sin compromisos visuales.</p>
+          <p class="b-desc">Tus clientes te verán perfectamente desde cualquier pantalla, sin compromisos visuales.</p>
         </div>
 
         <!-- Card 5 -->
@@ -1451,26 +1466,13 @@
         </div>
 
         <!-- Card 6 — Featured dark -->
-        <div class="b-card dark fade-up delay-3" aria-label="Resultados promedio">
+        <div class="b-card dark fade-up delay-3" aria-label="Objetivos del proyecto">
           <div class="b-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="b-title">Resultados que se miden</h3>
-          <p class="b-desc">No entrego webs "bonitas". Entrego herramientas que generan leads, ventas y recordación de marca. Cada proyecto tiene métricas claras desde el inicio.</p>
-          <div class="b-stats" aria-label="Estadísticas promedio">
-            <div class="b-stat">
-              <strong>+34%</strong>
-              <span>Aumento en conversiones</span>
-            </div>
-            <div class="b-stat">
-              <strong>&lt;1s</strong>
-              <span>Carga de página</span>
-            </div>
-            <div class="b-stat">
-              <strong>100</strong>
-              <span>Lighthouse score</span>
-            </div>
-          </div>
+          <h3 class="b-title" style="text-align: center;">Una web con un objetivo claro</h3>
+          <p class="b-desc">Definimos qué necesita tu negocio: recibir consultas, mostrar servicios o facilitar reservas. El diseño y el desarrollo acompañan ese objetivo.</p>
+          <div class="b-stats"><div class="b-stat"><strong>Diseño</strong><span>Acorde a tu marca</span></div><div class="b-stat"><strong>Contacto</strong><span>Fácil de encontrar</span></div><div class="b-stat"><strong>Código</strong><span>Entregado a vos</span></div></div>
         </div>
 
       </div>
@@ -1581,7 +1583,7 @@
       <div class="section-header fade-up">
         <span class="label">Inversión</span>
         <h2 class="title-lg">Precios honestos.<br>Cero letra pequeña.</h2>
-        <p class="subtitle">Elige el plan que se adapta a tu momento. Todos incluyen diseño, desarrollo y soporte post-lanzamiento.</p>
+        <p class="subtitle">Elige el plan que se adapta a tu momento. Todos incluyen diseño, desarrollo y soporte post-lanzamiento. Valores de referencia en USD; alcance y condiciones se confirman en la propuesta.</p>
       </div>
 
       <div class="pricing-grid">
@@ -1590,7 +1592,7 @@
         <div class="p-card fade-up delay-1">
           <p class="p-name">Esencial</p>
           <div class="p-price">
-            <span class="p-cur">$</span>
+            <span class="p-cur">USD</span>
             <span class="p-num">699</span>
           </div>
           <p class="p-period">Pago único · Entrega en 2 semanas</p>
@@ -1633,7 +1635,7 @@
               Soporte 30 días post-entrega
             </li>
           </ul>
-          <a href="#" class="btn btn-primary p-btn" data-modal-trigger>Empezar con Esencial</a>
+          <a href="#" class="btn btn-primary p-btn" data-modal-trigger data-plan="esencial">Empezar con Esencial</a>
         </div>
 
         <!-- Plan Profesional (featured) -->
@@ -1641,8 +1643,8 @@
           <div class="p-badge">Más elegido</div>
           <p class="p-name">Profesional</p>
           <div class="p-price">
-            <span class="p-cur">$</span>
-            <span class="p-num">1,899</span>
+            <span class="p-cur">USD</span>
+            <span class="p-num">1.899</span>
           </div>
           <p class="p-period">Pago único · Entrega en 3–4 semanas</p>
           <div class="p-divider"></div>
@@ -1690,17 +1692,17 @@
               Soporte 90 días post-entrega
             </li>
           </ul>
-          <a href="#" class="btn btn-primary p-btn" data-modal-trigger>Empezar con Profesional</a>
+          <a href="#" class="btn btn-primary p-btn" data-modal-trigger data-plan="profesional">Empezar con Profesional</a>
         </div>
 
         <!-- Plan A medida -->
         <div class="p-card fade-up delay-3">
           <p class="p-name">A medida</p>
           <div class="p-price">
-            <span class="p-cur">$</span>
-            <span class="p-num">4k+</span>
+            <span class="p-cur">USD</span>
+            <span class="p-num">4.000+</span>
           </div>
-          <p class="p-period">Cotización personalizada · Timeline según alcance</p>
+          <p class="p-period">Cotización personalizada · Plazo según alcance</p>
           <div class="p-divider"></div>
           <ul class="p-features">
             <li class="p-feature">
@@ -1708,12 +1710,6 @@
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
               Todo lo del plan Profesional
-            </li>
-            <li class="p-feature">
-              <span class="p-check" aria-hidden="true">
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-              E-commerce o plataforma compleja
             </li>
             <li class="p-feature">
               <span class="p-check" aria-hidden="true">
@@ -1740,77 +1736,22 @@
               Mantenimiento mensual disponible
             </li>
           </ul>
-          <a href="#" class="btn btn-primary p-btn" data-modal-trigger>Solicitar cotización</a>
+          <a href="#" class="btn btn-primary p-btn" data-modal-trigger data-plan="medida">Solicitar cotización</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       TESTIMONIOS
-       ========================================================= -->
-  <section id="testimonios" aria-label="Testimonios de clientes">
+  <section id="preguntas" aria-label="Preguntas frecuentes" style="background:var(--bg-2)">
     <div class="container">
-      <div class="section-header fade-up">
-        <span class="label">Lo que dicen</span>
-        <h2 class="title-lg">Negocios reales.<br>Resultados reales.</h2>
-        <p class="subtitle">No te cuento lo bueno que soy. Te dejo que lo cuenten ellos.</p>
-      </div>
-
-      <div class="test-grid">
-
-        <!-- Testimonial 1 -->
-        <div class="test-card fade-up delay-1">
-          <div class="test-stars" aria-label="5 estrellas">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="test-text">
-            Teníamos una tienda que tardaba 6 segundos en cargar y perdíamos ventas en el checkout. skmedios rehízo todo desde cero. Ahora carga en menos de 1 segundo y nuestras ventas crecieron un 34% el primer mes.
-          </p>
-          <div class="test-author">
-            <div class="test-av ta-1" aria-hidden="true">SM</div>
-            <div>
-              <p class="test-name">Sergio Martínez</p>
-              <p class="test-role">CEO, TiendaMar Online</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="test-card fade-up delay-2">
-          <div class="test-stars" aria-label="5 estrellas">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="test-text">
-            Necesitaba una landing en 10 días para un lanzamiento. No solo llegó a tiempo sino que superó mis expectativas. Copy claro, diseño limpio y una tasa de conversión del 12%. Nunca había visto algo así.
-          </p>
-          <div class="test-author">
-            <div class="test-av ta-2" aria-hidden="true">CR</div>
-            <div>
-              <p class="test-name">Carla Rodríguez</p>
-              <p class="test-role">Directora de Marketing, FitStudio</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="test-card fade-up delay-3">
-          <div class="test-stars" aria-label="5 estrellas">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="test-text">
-            Lo que más valoré es que skmedios piensa como negocio, no solo como desarrolladores. Hicieron preguntas que yo no había considerado. El resultado fue una web que realmente trabaja por mí mientras duermo.
-          </p>
-          <div class="test-author">
-            <div class="test-av ta-3" aria-hidden="true">MD</div>
-            <div>
-              <p class="test-name">Marcos Delgado</p>
-              <p class="test-role">Fundador, ClínicaVerde</p>
-            </div>
-          </div>
-        </div>
-
+      <div class="section-header"><span class="label">Antes de empezar</span><h2 class="title-lg">Las cosas claras, desde el principio.</h2></div>
+      <div class="faq-list">
+        <details><summary>¿Qué necesitás de mi parte?</summary><p>Tu logo, una descripción de tus servicios y el material que quieras mostrar. En la primera charla revisamos qué tenés y qué falta preparar.</p></details>
+        <details><summary>¿Los precios incluyen dominio y hosting?</summary><p>Los valores publicados corresponden al diseño y desarrollo. Antes de contratar, la propuesta detalla dominio, hosting, servicios externos e impuestos aplicables, junto con la forma de pago.</p></details>
+        <details><summary>¿Cuándo empieza a correr el plazo?</summary><p>Acordamos la fecha de inicio cuando definimos el alcance y contamos con el contenido necesario. Cualquier cambio de alcance se conversa antes de avanzar.</p></details>
+        <details><summary>¿Puedo pedir cambios y recibir soporte?</summary><p>Cada plan indica sus rondas de revisión y su período de soporte. El mantenimiento continuo y las nuevas funcionalidades se cotizan por separado.</p></details>
+        <details><summary>¿El sitio y el código quedan a mi nombre?</summary><p>Sí. Recibís el código de tu proyecto y coordinamos la entrega de los accesos correspondientes al finalizar.</p></details>
       </div>
     </div>
   </section>
@@ -1825,7 +1766,7 @@
         <!-- Photo -->
         <div class="about-photo-wrap fade-up delay-1">
           <div class="about-photo" aria-label="Foto de perfil">
-            <span class="photo-init" aria-hidden="true">SK</span>
+            <img src="assets/foto-perfil.jpeg" alt="Foto de perfil" class="photo-img">
           </div>
           <div class="about-badge" aria-label="5 años de experiencia">
             <p class="ab-num">5+</p>
@@ -1836,7 +1777,7 @@
         <!-- Content -->
         <div class="about-content fade-up delay-2">
           <span class="label">Sobre mí</span>
-          <h2 class="title-lg">Hola, somos skmedios.<br>Hacemos webs que trabajan.</h2>
+          <h2 class="title-lg">Soy Juan Manuel.<br>El desarrollador detrás de skmedios.</h2>
 
           <p class="about-text">
             Soy desarrollador backend especializado en Go, con experiencia construyendo sistemas que manejan miles de peticiones por segundo sin sudar. Pero no me quedé solo en el servidor: llevo años combinando ese poder técnico con diseño frontend que convierte.
@@ -1890,7 +1831,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             Solicitar cotización gratis
           </a>
-          <a href="https://wa.me/1234567890" class="btn btn-outline-white btn-lg" target="_blank" rel="noopener">
+          <a href="https://wa.me/59899786055" class="btn btn-outline-white btn-lg" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             WhatsApp directo
           </a>
@@ -1910,7 +1851,7 @@
         <!-- Brand -->
         <div>
           <p class="footer-logo">SK<span>medios</span></p>
-          <p class="footer-desc">Agencia de desarrollo web profesional. Páginas rápidas, elegantes y diseñadas para convertir visitantes en clientes.</p>
+          <p class="footer-desc">Desarrollo web profesional con atención directa. Páginas rápidas, elegantes y diseñadas para convertir visitantes en clientes.</p>
         </div>
 
         <!-- Servicios -->
@@ -1919,7 +1860,6 @@
           <ul class="footer-links">
             <li><a href="#precios">Landing Pages</a></li>
             <li><a href="#precios">Webs corporativas</a></li>
-            <li><a href="#precios">E-commerce</a></li>
             <li><a href="#precios">Backend Go</a></li>
             <li><a href="#precios">Mantenimiento</a></li>
           </ul>
@@ -1941,7 +1881,6 @@
         <div>
           <p class="footer-col-title">Contacto</p>
           <ul class="footer-links">
-            <li><a href="mailto:hola@skmedios.com">hola@skmedios.com</a></li>
             <li><a href="https://wa.me/59899786055" target="_blank" rel="noopener">WhatsApp</a></li>
             <li><a href="https://www.linkedin.com/in/juan-manuel-garcia-bueno/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://github.com/skmedios" target="_blank" rel="noopener">GitHub</a></li>
@@ -1951,7 +1890,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 skmedios · Hecho con Go y mucho café · Todos los derechos reservados</p>
+        <p class="footer-copy">© 2026 skmedios · Diseño y desarrollo por skmedios · Todos los derechos reservados</p>
         <div class="footer-social" aria-label="Redes sociales">
           <a href="https://github.com/skmedios" target="_blank" rel="noopener" class="f-social-btn" aria-label="GitHub">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -1971,12 +1910,12 @@
   <!-- =========================================================
        MODAL DE CONTACTO
        ========================================================= -->
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Formulario de cotización">
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" inert aria-label="Formulario de cotización">
     <div class="modal">
       <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
       <h3 class="modal-title">Cuéntame tu proyecto</h3>
-      <p class="modal-sub">30 segundos. Sin compromisos. Respondo en menos de 24 horas con una propuesta real.</p>
-      <form id="contact-form" novalidate>
+      <p class="modal-sub">Completá los datos y abrí la conversación en WhatsApp. Vas a poder revisar el mensaje antes de enviarlo.</p>
+      <form id="contact-form">
         <div class="form-grid">
           <div class="form-group">
             <label class="form-label" for="f-name">Tu nombre</label>
@@ -1991,9 +1930,9 @@
           <label class="form-label" for="f-plan">¿Qué necesitas?</label>
           <select class="form-select" id="f-plan">
             <option value="">Selecciona una opción…</option>
-            <option value="esencial">Landing Page — $699</option>
-            <option value="profesional">Web Profesional — $1,899</option>
-            <option value="medida">Proyecto a medida — $4k+</option>
+            <option value="esencial">Landing Page — USD 699</option>
+            <option value="profesional">Web Profesional — USD 1.899</option>
+            <option value="medida">Proyecto a medida — desde USD 4.000</option>
             <option value="consulta">Solo tengo una duda</option>
           </select>
         </div>
@@ -2002,7 +1941,7 @@
           <textarea class="form-textarea" id="f-msg" placeholder="Ej: Tengo una clínica dental y necesito una web con sistema de citas online…"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-lg form-submit">
-          Enviar y esperar respuesta
+          Continuar en WhatsApp
         </button>
       </form>
     </div>
@@ -2053,7 +1992,12 @@
     const overlay = document.getElementById('modal-overlay');
     const closeBtn = document.getElementById('modal-close');
 
-    const openModal = () => {
+    let previousFocus;
+    const openModal = (plan = "") => {
+      previousFocus = document.activeElement;
+      overlay.inert = false;
+      overlay.setAttribute("aria-hidden", "false");
+      document.getElementById("f-plan").value = plan;
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
       document.getElementById('f-name').focus();
@@ -2061,45 +2005,43 @@
 
     const closeModal = () => {
       overlay.classList.remove('open');
+      overlay.inert = true;
+      overlay.setAttribute('aria-hidden', 'true');
+      previousFocus?.focus();
       document.body.style.overflow = '';
     };
 
     document.querySelectorAll('[data-modal-trigger]').forEach(el => {
-      el.addEventListener('click', e => { e.preventDefault(); openModal(); });
+      el.addEventListener('click', e => { e.preventDefault(); openModal(el.dataset.plan || ""); });
     });
 
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
 
-    /* ---- Contact form (demo: shows success state) ---- */
+    /* Prepare a message; the visitor confirms sending in WhatsApp. */
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', e => {
       e.preventDefault();
-
+      if (!form.reportValidity()) return;
       const name = document.getElementById('f-name').value.trim();
       const email = document.getElementById('f-email').value.trim();
-
-      if (!name || !email) {
-        alert('Por favor completa tu nombre y email.');
-        return;
-      }
-
-      /* Replace with your backend endpoint when ready */
-      form.innerHTML = `
-        <div style="text-align:center; padding: 32px 0;">
-          <div style="font-size:3rem; margin-bottom:16px;">🎉</div>
-          <h4 style="font-size:1.3rem; font-weight:800; letter-spacing:-0.02em; margin-bottom:8px;">¡Recibido, ${name}!</h4>
-          <p style="color:var(--text-2); font-size:0.9rem; line-height:1.7;">Te respondo a <strong>${email}</strong> en menos de 24 horas con una propuesta personalizada.</p>
-        </div>
-      `;
-
-      setTimeout(closeModal, 3200);
+      const plan = document.getElementById('f-plan');
+      const message = document.getElementById('f-msg').value.trim();
+      const text = `Hola, soy ${name}.\nEmail: ${email}\nConsulta: ${plan.value ? plan.options[plan.selectedIndex].text : 'Quiero conversar sobre mi web'}\n${message}`;
+      window.open('https://wa.me/59899786055?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
+    });
+    overlay.addEventListener('keydown', e => {
+      if (e.key !== 'Tab') return;
+      const items = [...overlay.querySelectorAll('button, input, select, textarea, a[href]')];
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 
     /* ---- Smooth parallax on browser mockup (optional, subtle) ---- */
     const browser = document.querySelector('.browser');
-    if (browser && window.matchMedia('(min-width: 1024px)').matches) {
+    if (browser && window.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)').matches) {
       document.addEventListener('mousemove', e => {
         const x = (e.clientX / window.innerWidth - 0.5) * 6;
         const y = (e.clientY / window.innerHeight - 0.5) * 4;
